@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Capitolele 1-3 - Awaitility (API clasic)">
+    <listeners>
+        <listener class-name="utils.HttpDefaultsListener"/>
+    </listeners>
+    <test name="Capitolul 1 - Bazele Awaitility">
+        <classes>
+            <class name="tests.ConfigurareTest"/>
+            <class name="tests.AsyncTest"/>
+        </classes>
+    </test>
+    <test name="Capitolul 2 - Awaitility + REST Assured">
+        <classes>
+            <class name="tests.RetrieveConfirmationTokenAsyncTest"/>
+            <class name="tests.PollDelayVsPollIntervalTest"/>
+            <class name="tests.PrivateFieldWaitTest"/>
+            <class name="tests.ApiDelayTest"/>
+            <class name="tests.HapifyMeTokenPollingTest"/>
+        </classes>
+    </test>
+    <test name="Capitolul 3 - Tehnici avansate">
+        <classes>
+            <class name="tests.TestWithIgnoredExceptions"/>
+            <class name="tests.NegativeLogicTest"/>
+            <class name="tests.UserCreationTest"/>
+            <class name="tests.FileAndDatabaseWaitTest"/>
+            <class name="tests.RetrieveTokenStatusTest"/>
+        </classes>
+    </test>
+</suite>

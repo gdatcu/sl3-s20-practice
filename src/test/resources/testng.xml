@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Sesiunea 20 - Toate exercitiile">
+    <listeners>
+        <listener class-name="utils.HttpDefaultsListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="testng-cap1-3.xml"/>
+        <suite-file path="testng-tema.xml"/>
+        <suite-file path="testng-async.xml"/>
+    </suite-files>
+</suite>

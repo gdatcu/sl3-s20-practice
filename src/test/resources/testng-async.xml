@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="hapifyMe REST API v1 - Async">
+    <listeners>
+        <listener class-name="utils.HttpDefaultsListener"/>
+    </listeners>
+    <test name="Flux asincron" preserve-order="true">
+        <classes>
+            <class name="ro.qatester.api.v1.async.HapifyMeAsyncFlowTest"/>
+        </classes>
+    </test>
+    <test name="Timing">
+        <classes>
+            <class name="ro.qatester.api.v1.async.LinkPreviewTimingTest"/>
+        </classes>
+    </test>
+    <test name="Exercitii Capitolul 5">
+        <classes>
+            <class name="ro.qatester.api.v1.async.HapifyMeAsyncExercitiiTest"/>
+        </classes>
+    </test>
+</suite>

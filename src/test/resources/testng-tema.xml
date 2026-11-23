@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Capitolul 4 - Tema (solutie de referinta)">
+    <listeners>
+        <listener class-name="utils.HttpDefaultsListener"/>
+    </listeners>
+    <test name="Tema pe API-ul clasic" preserve-order="true">
+        <classes>
+            <class name="com.hapifyme.api.tests.UserLifecycleTest"/>
+        </classes>
+    </test>
+    <test name="Tema pe API-ul v1 (Anexa 5.A)" preserve-order="true">
+        <classes>
+            <class name="ro.qatester.api.v1.tema.UserLifecycleV1Test"/>
+        </classes>
+    </test>
+</suite>
