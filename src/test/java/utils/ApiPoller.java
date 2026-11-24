@@ -29,6 +29,7 @@ public final class ApiPoller {
                         .when()
                                 .get(url)
                         .then()
+                                .log().all()
                                 .statusCode(200)                           // requestul tehnic e OK
                                 .body("status", equalTo(expectedStatus))); // business logic
 

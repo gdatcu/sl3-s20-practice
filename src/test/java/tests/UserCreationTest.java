@@ -28,5 +28,6 @@ public class UserCreationTest {
 
         // O singura linie curata!
         WaitUtils.waitForCondition("Userul sa devina activ", () -> getUserStatus().equals("ACTIVE"));
+        System.out.println("User activ.");
     }
 }

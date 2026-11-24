@@ -35,19 +35,21 @@ public class RetrieveConfirmationTokenAsyncTest {
         System.out.println("Incepem cautarea token-ului pentru: " + user.email);
 
         await()
-                .atMost(10, SECONDS)      // Renuntam dupa 10 secunde
+                .alias("Așteptare Token Confirmare Email")
+                .atMost(3, SECONDS)      // Renuntam dupa 10 secunde
                 .pollInterval(1, SECONDS) // Verificam in fiecare secunda
                 .untilAsserted(() ->
                         given()
                                 .baseUri(ClassicApi.BASE_URI)
                                 .header("Authorization", user.apiKey)        // Auth conform documentatiei
                                 .queryParam("username_or_email", user.email) // Parametru obligatoriu
-                                .log().uri()
+                                .log().all()
                         .when()
                                 .get("/user/retrieve_token.php")
                         .then()
                                 .statusCode(200)
-                                .body("status", equalTo("success"))
+                                .log().all()
+                                .body("status", equalTo("successs"))
                                 .body("confirmation_token", notNullValue())); // Conditia critica
 
         System.out.println("Token-ul a fost generat si gasit!");

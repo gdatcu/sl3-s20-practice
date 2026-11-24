@@ -19,14 +19,16 @@ public class ApiDelayTest {
 
         await()
                 .alias("Asteptare raspuns httpbin")
-                .atMost(10, SECONDS)
+                .atMost(8, SECONDS)
                 .pollInterval(1, SECONDS)
                 .untilAsserted(() ->
                         given()
                                 .baseUri("https://httpbin.org")
+                                .log().all()
                         .when()
                                 .get("/delay/5") // Serverul face sleep 5s
                         .then()
+                                .log().all()
                                 .statusCode(200));
 
         System.out.println("Raspuns primit!");
